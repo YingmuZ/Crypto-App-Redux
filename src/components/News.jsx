@@ -34,7 +34,7 @@ const News = ({ simplified }) => {
             onChange={(value) => setNewsCategory(value)}
             // filtering out the options so that only show the one for the selected cryptocurrency
             // ofc we need to create a useState for the crypto category
- 
+            filterOption={(input, option) => option.children.toLowerCase().indexof(input.toLowerCase()) >= 0}
           >
             <Option value="Cryptocurrency">cryptocurrency</Option>
             {data?.data?.coins.map((coin) => <Option value={coin.name}>{coin.name}</Option>)}
